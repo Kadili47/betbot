@@ -1,0 +1,37 @@
+{
+    "name": "WhatsApp Auto Betting Tips Bot",
+    "description": "A self-hosted WhatsApp bot that provides betting tips.",
+    "repository": "https://github.com/username/whatsapp-bot",
+    "keywords": ["whatsapp", "bot", "betting", "auto-betting"],
+    "env": {
+      "DB_HOST": {
+        "description": "Database host",
+        "required": true
+      },
+      "DB_USER": {
+        "description": "Database username",
+        "required": true
+      },
+      "DB_PASS": {
+        "description": "Database password",
+        "required": true
+      },
+      "DB_NAME": {
+        "description": "Database name",
+        "required": true
+      },
+      "SESSION_ID": {
+        "description": "Session ID for WhatsApp pairing",
+        "required": true
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ],
+    "scripts": {
+      "postdeploy": "node src/setup.js"
+    }
+  }
+  
